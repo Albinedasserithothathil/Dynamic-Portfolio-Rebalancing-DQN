@@ -1,11 +1,11 @@
-# 📈 Dynamic Portfolio Rebalancing using Deep Q-Learning
+#  Dynamic Portfolio Rebalancing using Deep Q-Learning
 
 A reinforcement learning–based portfolio management system that dynamically reallocates capital across **Stocks**, **Bonds**, and **Cash** using a **Deep Q-Network (DQN)**.  
 The agent learns optimal rebalancing strategies across **high**, **medium**, and **low volatility** markets to maximize risk-adjusted returns and control downside risk.
 
 ---
 
-## 🧭 Introduction
+##  Introduction
 
 Traditional rebalancing strategies are **static** and fail to adjust quickly during volatile markets.  
 This often results in:
@@ -22,7 +22,7 @@ To overcome this, we propose a **Deep Q-Network (DQN)** that:
 
 ---
 
-## 🤖 Reinforcement Learning Framework
+##  Reinforcement Learning Framework
 
 ### **Agent**
 Deep Q-Network (DQN) that learns optimal rebalancing decisions.
@@ -52,7 +52,7 @@ Final cumulative profit after training.
 
 ---
 
-## ⚙️ Environment Setup
+##  Environment Setup
 
 - **Initial Portfolio Weights:** (1/3, 1/3, 1/3)  
 - **Initial Balance:** ₹100,000  
@@ -69,7 +69,7 @@ Derived daily returns include:
 
 ---
 
-## 🧠 Model Architecture
+##  Model Architecture
 
 - **Algorithm:** Deep Q-Network (DQN)  
 - **Input Layer:** 5 features  
@@ -81,7 +81,7 @@ Derived daily returns include:
 
 ---
 
-## 🔄 Learning Phase
+##  Learning Phase
 
 ### **Reward:**
  **Reward = ln(new balance) − ln(old balance)**
@@ -92,11 +92,12 @@ Measures continuous compounded portfolio growth.
 - **Random Batch Sampling** — Breaks correlation  
 - **Bellman Update:**  
    **Q(s, a) = reward + gamma * max Q_target(next_state, all actions)**
+
 Teaches the agent to value current + future opportunities.
 
 ---
 
-## 🔁 Inside Each Training Loop
+##  Inside Each Training Loop
 
 1. **Agent observes** current state (returns, weights).  
 2. **Agent selects an action** using epsilon-greedy policy:
@@ -109,7 +110,7 @@ Teaches the agent to value current + future opportunities.
 
 ---
 
-## 📊 Configuration Parameters
+##  Configuration Parameters
 
 ### **Training**
 - Episodes: 100  
@@ -128,7 +129,7 @@ Teaches the agent to value current + future opportunities.
 
 ---
 
-## 📈 Evaluation Metrics
+##  Evaluation Metrics
 
 - **Sharpe Ratio** ↑ — Measures risk-adjusted return  
 - **Max Drawdown** ↓ — Measures downside protection  
@@ -142,7 +143,7 @@ The agent demonstrated:
 
 ---
 
-## 💼 ROI – Business Perspective
+##  ROI – Business Perspective
 
 **Return on Investment (ROI)** indicates how effectively capital is deployed to generate returns.  
 From a business viewpoint:
