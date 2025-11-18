@@ -1,11 +1,11 @@
-#  Dynamic Portfolio Rebalancing using Deep Q-Learning
+# 📈 Dynamic Portfolio Rebalancing using Deep Q-Learning
 
 A reinforcement learning–based portfolio management system that dynamically reallocates capital across **Stocks**, **Bonds**, and **Cash** using a **Deep Q-Network (DQN)**.  
 The agent learns optimal rebalancing strategies across **high**, **medium**, and **low volatility** markets to maximize risk-adjusted returns and control downside risk.
 
 ---
 
-##  Introduction
+## 🧭 Introduction
 
 Traditional rebalancing strategies are **static** and fail to adjust quickly during volatile markets.  
 This often results in:
@@ -22,7 +22,7 @@ To overcome this, we propose a **Deep Q-Network (DQN)** that:
 
 ---
 
-##  Reinforcement Learning Framework
+## 🤖 Reinforcement Learning Framework
 
 ### **Agent**
 Deep Q-Network (DQN) that learns optimal rebalancing decisions.
@@ -44,10 +44,7 @@ Rebalance step = **5%**, Max allocation = **70%**, No short selling.
 ### **Reward**
 Profit after each rebalance expressed as continuous log-return:
 
-\[
-r_t = \ln(\text{new balance}) - \ln(\text{old balance}) - \text{penalty}
-\]
-
+   Reward = ln(new balance) − ln(old balance) − penalty
 Captures compounded portfolio growth and discourages over-trading.
 
 ### **Value Function**
@@ -55,7 +52,7 @@ Final cumulative profit after training.
 
 ---
 
-##  Environment Setup
+## ⚙️ Environment Setup
 
 - **Initial Portfolio Weights:** (1/3, 1/3, 1/3)  
 - **Initial Balance:** ₹100,000  
@@ -66,13 +63,13 @@ Final cumulative profit after training.
   - No short selling
 
 Derived daily returns include:
-- **Stocks Return** = \( \frac{P_t}{P_{t-1}} - 1 \)  
-- **Bonds Return** = \( \frac{B_t}{B_{t-1}} - 1 \)  
-- **Cash Return** = FD Rate ÷ 25200  
+- **Stocks Return** = (P_t / P_(t-1)) − 1
+- **Bonds Return** = (B_t / B_(t-1)) − 1
+- **Cash Return** = FD Rate / 25200
 
 ---
 
-##  Model Architecture
+## 🧠 Model Architecture
 
 - **Algorithm:** Deep Q-Network (DQN)  
 - **Input Layer:** 5 features  
@@ -84,28 +81,22 @@ Derived daily returns include:
 
 ---
 
-##  Learning Phase
+## 🔄 Learning Phase
 
 ### **Reward:**
-\[
-r_t = \ln(\text{new balance}) - \ln(\text{old balance})
-\]
-
+ **Reward = ln(new balance) − ln(old balance)**
 Measures continuous compounded portfolio growth.
 
 ### **Core Components**
 - **Replay Buffer** — Stores past experiences  
 - **Random Batch Sampling** — Breaks correlation  
 - **Bellman Update:**  
-  \[
-  Q(s,a)=r+\gamma\max_{a'}Q'(s',a')
-  \]
-
+   **Q(s, a) = reward + gamma * max Q_target(next_state, all actions)**
 Teaches the agent to value current + future opportunities.
 
 ---
 
-##  Inside Each Training Loop
+## 🔁 Inside Each Training Loop
 
 1. **Agent observes** current state (returns, weights).  
 2. **Agent selects an action** using epsilon-greedy policy:
@@ -118,7 +109,7 @@ Teaches the agent to value current + future opportunities.
 
 ---
 
-##  Configuration Parameters
+## 📊 Configuration Parameters
 
 ### **Training**
 - Episodes: 100  
@@ -151,7 +142,7 @@ The agent demonstrated:
 
 ---
 
-##  ROI – Business Perspective
+## 💼 ROI – Business Perspective
 
 **Return on Investment (ROI)** indicates how effectively capital is deployed to generate returns.  
 From a business viewpoint:
@@ -166,4 +157,3 @@ In this project, a high ROI means the agent not only earns returns but does so *
 
 ---
  
-
