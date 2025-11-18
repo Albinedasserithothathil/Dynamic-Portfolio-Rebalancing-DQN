@@ -45,6 +45,7 @@ Rebalance step = **5%**, Max allocation = **70%**, No short selling.
 Profit after each rebalance expressed as continuous log-return:
 
    Reward = ln(new balance) − ln(old balance) − penalty
+
 Captures compounded portfolio growth and discourages over-trading.
 
 ### **Value Function**
@@ -85,6 +86,8 @@ Derived daily returns include:
 
 ### **Reward:**
  **Reward = ln(new balance) − ln(old balance)**
+
+
 Measures continuous compounded portfolio growth.
 
 ### **Core Components**
@@ -92,6 +95,7 @@ Measures continuous compounded portfolio growth.
 - **Random Batch Sampling** — Breaks correlation  
 - **Bellman Update:**  
    **Q(s, a) = reward + gamma * max Q_target(next_state, all actions)**
+
 
 Teaches the agent to value current + future opportunities.
 
